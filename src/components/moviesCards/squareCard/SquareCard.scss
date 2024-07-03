@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+
+.squareCardMainContainer {
+  width: 200px;
+  height: 230px;
+  background-color: transparent-color($black, .05);
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  margin: 0 5px;
+
+  > img {
+    height: 70%;
+    max-width: 90%;
+    margin-bottom: 5px;
+  }
+
+  > span {
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  > svg {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: $primary;
+    cursor: pointer;
+    z-index: 100;
+    transition: .3s ease;
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}

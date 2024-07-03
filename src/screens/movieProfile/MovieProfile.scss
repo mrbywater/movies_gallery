@@ -1,0 +1,198 @@
+@import "../../styles/colors";
+
+.moviesProfileMainContainer {
+  background-color: transparent-color($black, .05);
+  width: 600px;
+  height: 450px;
+  border: 1px solid transparent-color($black, .4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  position: relative;
+
+  @media (width <= 600px) {
+    height: 500px;
+  }
+
+  @media (width <= 480px) {
+    flex-direction: column;
+    height: max-content;
+    align-items: center;
+  }
+
+  > svg {
+    position: absolute;
+    font-size: 24px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: $gray;
+    transition: .3s color ease;
+
+    &:hover {
+      color: $black
+    }
+  }
+
+  > div {
+    display: flex;
+  }
+
+  .movieImageContainer {
+    width: 250px;
+    flex-direction: column;
+
+    @media (width <= 600px) {
+      width: 200px;
+    }
+
+    @media (width <= 480px) {
+      width: 100%;
+    }
+
+    > div {
+      &:nth-child(1) {
+        height: 70%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 40px;
+
+        @media (width <= 600px) {
+          margin-bottom: 10px;
+        }
+
+        > img{
+          max-width: 100%;
+          height: fit-content;
+          max-height: 100%;
+          object-fit: cover
+        }
+
+        > div {
+          height: 40px;
+          font-size: 24px;
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+
+          > svg {
+            color: $primary;
+            cursor: pointer;
+            transition: .3s ease;
+
+            &:active {
+              transform: translateY(2px);
+            }
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        height: 30%;
+        padding: 0 30px 10px 30px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: end;
+
+        @media (width <= 600px) {
+          padding: 0 10px 10px 10px;
+        }
+
+        > div {
+          text-align: center;
+          height: max-content;
+          min-width: 40%;
+          box-sizing: border-box;
+          padding: 5px;
+          border-radius: 10px;
+          margin-bottom: 10px;
+          background-color: transparent-color($primary, .2);
+        }
+      }
+    }
+  }
+
+  .movieProfileDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 250px);
+    box-sizing: border-box;
+    padding: 0 10px;
+
+    @media (width <= 600px) {
+      width: calc(100% - 200px);
+    }
+
+    @media (width <= 480px) {
+      width: 100%;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      &:first-child {
+        height: 70%;
+
+        > span {
+          &:first-child {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+          }
+
+          &:last-child {
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+              width: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: transparent-color($black, .4);
+              border-radius: 20px;
+            }
+
+          }
+        }
+      }
+
+      &:last-child {
+        font-size: 14px;
+        overflow: hidden;
+        margin-top: 10px;
+
+        > span:first-child {
+          margin-bottom: 10px;
+        }
+
+        > span:last-child {
+          overflow: auto;
+
+          &::-webkit-scrollbar {
+            width: 5px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: transparent-color($black, .4);
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

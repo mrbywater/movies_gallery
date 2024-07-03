@@ -1,0 +1,42 @@
+@import "../../styles/colors";
+@import "../../styles/style";
+
+.errorPageMainContainer {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+
+  .label {
+    text-align: center;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: calc(1.5 * 15px);
+    color: $gray;
+
+    @media (max-width: 800px) {
+      font-size: 32px;
+    }
+  }
+
+  .description {
+    max-width: 500px;
+    margin-top: 10px;
+    margin-bottom: calc(1.5 * 15px);
+  }
+
+  .title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 38px;
+
+    @media (max-width: 800px) {
+      font-size: 32px;
+    }
+  }
+}
+

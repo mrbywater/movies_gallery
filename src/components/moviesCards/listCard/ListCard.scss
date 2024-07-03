@@ -1,0 +1,125 @@
+@import "../../../styles/colors";
+
+.listCardMainContainer {
+  background-color: transparent-color($black, .05);
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 20px;
+  height: 200px;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  margin: 0 5px;
+
+  @media (width <= 1250px) {
+    width: 60vw;
+    height: 300px;
+  }
+
+  @media (width <= 980px) {
+    width: 50vw;
+    height: max-content;
+    flex-direction: column;
+  }
+
+  @media (width <= 750px) {
+    width: 80vw;
+  }
+
+  > svg {
+    color: $primary;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  .imageContainer {
+      display: flex;
+      width: 300px;
+      justify-content: center;
+
+      @media (width <= 980px) {
+        width: 100%;
+      }
+
+      > img {
+        max-width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        @media (width <= 980px) {
+          max-width: 80%;
+          max-height: 200px;
+        }
+      }
+  }
+
+  .descriptionContainer {
+    width: calc(100% - 300px);
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (width <= 980px) {
+      width: 100%;
+      margin-left:0px;
+    }
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (width <= 980px) {
+        justify-content: center;
+      }
+
+      &:first-child {
+        flex-wrap: wrap;
+
+        span {
+          margin-right: 15px;
+          font-size: 22px;
+
+          @media (width <= 980px) {
+            text-align: center;
+            width: 100%;
+            margin-right: 0px;
+          }
+
+          &:first-child{
+            cursor: pointer;
+
+            @media (width <= 980px) {
+              margin-bottom: 10px;
+            }
+          }
+
+          &:last-child {
+            margin-top: 10px;
+            font-size: 18px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+      &:last-child > div {
+        background-color: transparent-color($primary, .3);
+        margin: 10px 10px 10px 0px;
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

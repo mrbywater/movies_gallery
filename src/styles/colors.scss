@@ -1,0 +1,8 @@
+$primary: #228be6;
+$gray: #abb5b7;
+$white: #edf2f5;
+$black: #000;
+
+@function transparent-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}

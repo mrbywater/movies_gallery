@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.scss';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import MoviesList from './screens/moviesList/MoviesList';
+import MoviesProfile from './screens/movieProfile/MovieProfile';
+import ErrorPage from './screens/errorPage/ErrorPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MoviesList />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: 'movie_profile/:movieId',
+    element: <MoviesProfile />,
+    errorElement: <ErrorPage />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="appMainContainer">
+      <RouterProvider router={router} />
     </div>
   );
 }
