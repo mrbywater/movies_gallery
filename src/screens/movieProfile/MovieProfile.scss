@@ -144,7 +144,11 @@
           &:first-child {
             font-size: 28px;
             margin-bottom: 30px;
-            text-align: center;
+
+            @media (width <= 480px) {
+              width: 100%;
+              text-align: center;
+            }
           }
 
           &:last-child {
